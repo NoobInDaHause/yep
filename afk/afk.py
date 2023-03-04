@@ -96,7 +96,7 @@ class Afk(commands.Cog):
         menulist = []
         async with user_config.PINGS() as pingslist:
             for ping in pingslist:
-                embed=discord.Embed(title=f"Pings you recieved while you were away {author.name}.",color=await self.bot.get_embed_color(self),description=f""":arrow_right: {ping["whopinged"]} [pinged you in]({ping['msgurl']}) {ping["channel"]} {ping["timestamp"]}.\n**Message Content:** {ping["messagecontent"]}""")
+                embed=discord.Embed(title=f"Pings you recieved while you were away {author.name}.",color=author.colour,description=f""":arrow_right: {ping["whopinged"]} [pinged you in]({ping['msgurl']}) {ping["channel"]} {ping["timestamp"]}.\n**Message Content:** {ping["messagecontent"]}""")
                 embed.set_footer(text=f"Page no: {(ping['pageno'])}/{len(pingslist)}")
                 menulist.append(embed)
 
